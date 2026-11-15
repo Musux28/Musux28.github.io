@@ -130,6 +130,33 @@ h1.glitch{animation:glitch .35s steps(2) 1}
 
 @media (max-width:860px){.story-grid,.focus{grid-template-columns:1fr}}
 
+/* contact */
+.contact{padding-block:32px 72px;display:grid;justify-items:center}
+.contact-in{width:100%;max-width:1100px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:40px;align-items:start}
+.contact h2{margin:6px 0 12px;font-family:var(--display);font-size:clamp(28px,4.4vw,48px);line-height:1.05;text-wrap:balance}
+.contact h2 em{font-style:normal;color:var(--red)}
+.contact .lead{margin:0 0 20px;color:#b6c2d4;line-height:1.7;max-width:48ch}
+.certs{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.certs li{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:12.5px;color:var(--text);padding:10px 12px;border:1px solid var(--line);background:rgba(11,17,32,.7)}
+.certs li span{color:#ffb347;white-space:nowrap}
+.term{border:1px solid var(--line);background:rgba(8,12,22,.92);font-family:var(--mono);font-size:13.5px;min-width:0}
+.term .bar{display:flex;gap:6px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);color:var(--mute);font-size:11.5px}
+.term .bar i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.term .bar i:first-child{background:var(--red)} .term .bar i:nth-child(3){background:var(--ice)}
+.term .bar span{margin-left:8px}
+.term .body{padding:16px;display:grid;gap:4px}
+.term .cmd{color:var(--mute)} .term .cmd b{color:var(--ice);font-weight:400}
+.row{display:grid;grid-template-columns:7.5em minmax(0,1fr) auto;gap:10px;align-items:center;padding:9px 0;border-bottom:1px dashed var(--line)}
+.row:last-of-type{border-bottom:0}
+.row .key{color:var(--mute)}
+.row .val{color:var(--text);overflow-wrap:anywhere;user-select:all}
+.row a.val{text-decoration:none;user-select:auto} .row a.val:hover,.row a.val:focus-visible{color:var(--ice);outline:none}
+.copy{font-family:var(--mono);font-size:11px;background:none;border:1px solid var(--line);color:var(--mute);padding:4px 9px;cursor:pointer}
+.copy:hover,.copy:focus-visible{color:var(--ice);border-color:var(--ice);outline:none}
+.term .ok{color:#3dff9a;margin-top:8px}
+footer{position:relative;z-index:2;border-top:1px solid var(--line);padding-block:20px;font-family:var(--mono);font-size:11px;color:var(--mute);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:860px){.contact-in{grid-template-columns:1fr}.row{grid-template-columns:6em minmax(0,1fr) auto}}
+
 /* lab panel */
 .lab{padding-block:40px 64px;display:grid;justify-items:center}
 .lab-in{width:100%;max-width:1100px;display:grid;gap:24px;--acc:var(--core)}
@@ -194,7 +221,7 @@ h1.glitch{animation:glitch .35s steps(2) 1}
 <header class="gut">
   <div class="id">AM<b>//</b>SEC</div>
   <nav aria-label="Sections">
-    <a href="#mind">~/mind</a><a href="#whoami">~/whoami</a><a href="#lab">~/projects</a><a href="#mind">~/contact</a>
+    <a href="#mind">~/mind</a><a href="#whoami">~/whoami</a><a href="#lab">~/projects</a><a href="#contact">~/contact</a>
   </nav>
   <div class="status"><span class="dot"></span>SYSTEM ONLINE</div>
 </header>
@@ -226,7 +253,7 @@ h1.glitch{animation:glitch .35s steps(2) 1}
     <dl class="readout">
       <div><dt>GPA</dt><dd>3.98<small> /4.0</small></dd></div>
       <div><dt>NSA research</dt><dd>2<small> internships</small></dd></div>
-      <div><dt>Certs</dt><dd>3<small> AWS·AZ·ISC2</small></dd></div>
+      <div><dt>Certs · in progress</dt><dd>3<small> AWS·AZ·ISC2</small></dd></div>
       <div><dt>Projects</dt><dd>10<small> red+blue</small></dd></div>
     </dl>
   </section>
@@ -257,7 +284,7 @@ h1.glitch{animation:glitch .35s steps(2) 1}
             <li><span class="n">3</span><span class="h">Family showroom, Giarre<small>Customers, suppliers, teamwork under pressure.</small></span><span class="y">IT</span></li>
             <li><span class="n">4</span><span class="h">M.S. Cybersecurity, UAlbany<small>Albany, NY · GPA 3.98/4.0</small></span><span class="y">2025–26</span></li>
             <li><span class="n">5</span><span class="h">NSA-sponsored research intern<small>INSuRE · cryptography &amp; formal verification</small></span><span class="y">2025–26</span></li>
-            <li class="dest"><span class="n">6</span><span class="h">Cloud Security · AI Security<small>Destination: an entry-level cybersecurity role, anywhere in the U.S.</small></span><span class="y">NEXT ▸</span></li>
+            <li class="dest"><span class="n">6</span><span class="h">Cloud Security · AI Security<small>Next: a cybersecurity team, anywhere in the U.S.</small></span><span class="y">NEXT ▸</span></li>
           </ol>
         </div>
       </div>
@@ -267,7 +294,7 @@ h1.glitch{animation:glitch .35s steps(2) 1}
           <span class="k">Specializing in · 01</span>
           <h3>Cloud Security</h3>
           <p>Infrastructure is moving to the cloud, and most breaches there start with a misconfiguration, not an exploit. I want to be the person who catches it first.</p>
-          <div class="ev"><span>evidence ›</span> built the shared AWS EC2 + Docker environment for our NSA research · IAM · Linux · AWS Cloud Practitioner &amp; Azure Fundamentals</div>
+          <div class="ev"><span>evidence ›</span> built the shared AWS EC2 + Docker environment for our NSA research · IAM · Linux · AWS Cloud Practitioner &amp; Azure Fundamentals in progress</div>
         </div>
         <div class="fcard ai">
           <span class="k">Specializing in · 02</span>
@@ -290,12 +317,40 @@ h1.glitch{animation:glitch .35s steps(2) 1}
       <div class="grid" id="grid"></div>
     </div>
   </section>
+
+  <section class="contact gut" id="contact">
+    <div class="contact-in">
+      <div>
+        <div class="sec-k">~/contact <span>■</span> open channel</div>
+        <h2>Ready to join a <em>security</em> team</h2>
+        <p class="lead">I graduate in December 2026 and I'm ready for the professional world of cybersecurity, especially cloud security, AI security, security operations and research. I'm open to opportunities across the U.S. The fastest way to reach me is email or LinkedIn.</p>
+        <ul class="certs" aria-label="Certifications">
+          <li>AWS Certified Cloud Practitioner (CLF-C02)<span>IN PROGRESS</span></li>
+          <li>Microsoft Azure Fundamentals (AZ-900)<span>IN PROGRESS</span></li>
+          <li>ISC2 Certified in Cybersecurity (CC)<span>IN PROGRESS</span></li>
+        </ul>
+      </div>
+      <div class="term">
+        <div class="bar"><i></i><i></i><i></i><span>antonio@am-sec:~</span></div>
+        <div class="body">
+          <div class="cmd">$ <b>./contact --all</b></div>
+          <div class="row"><span class="key">email</span><span class="val" id="mail">musumeci234@gmail.com</span><button class="copy" type="button" data-copy="mail">COPY</button></div>
+          <div class="row"><span class="key">linkedin</span><a class="val" href="https://linkedin.com/in/antonio-musumeci-250703156/" target="_blank" rel="noopener">in/antonio-musumeci</a><span></span></div>
+          <div class="row"><span class="key">github</span><a class="val" href="https://github.com/Musux28" target="_blank" rel="noopener">github.com/Musux28</a><span></span></div>
+          <div class="row"><span class="key">based in</span><span class="val">Albany, NY · open to relocate</span><span></span></div>
+          <div class="row"><span class="key">languages</span><span class="val">English · Italian (native)</span><span></span></div>
+          <div class="ok">[✓] channel open · response time &lt; 24h</div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
+<footer class="gut"><span>© 2026 Antonio Musumeci</span><span>hand-built · HTML / CSS / Canvas · no trackers</span></footer>
 
 <script>
 (()=>{
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const ARTICLE='https://www.linkedin.com/in/antonio-musumeci-250703156/recent-activity/articles/';
+const ARTICLE='https://www.linkedin.com/pulse/50c-inside-freezer-how-hackers-turned-italys-fridges-against-antonio-qp6xc/';
 
 /* ---------------- content ---------------- */
 const DATA={
@@ -341,6 +396,9 @@ function setMode(m,scroll){
     ${it.a?`<a href="${it.a[1]}" target="_blank" rel="noopener">${it.a[0]} ▸</a>`:''}</article>`).join('');
   if(scroll)document.getElementById('lab').scrollIntoView({behavior:reduce?'auto':'smooth'});
 }
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',()=>{const el=document.getElementById(b.dataset.copy),txt=el.textContent;
+  const done=()=>{b.textContent='COPIED';setTimeout(()=>b.textContent='COPY',1600)};
+  try{navigator.clipboard.writeText(txt).then(done,()=>{getSelection().selectAllChildren(el);b.textContent='SELECTED'})}catch(e){getSelection().selectAllChildren(el);b.textContent='SELECTED'}}));
 document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.go,b.classList.contains('side'))));
 setMode('core');
 
